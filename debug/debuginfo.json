@@ -1,0 +1,16 @@
+[
+  {
+    "artifact": "frcJava (in project HDE)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "HDE",
+    "language": "java"
+  },
+  {
+    "artifact": "frcJava (in project Trebuchet)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "Trebuchet",
+    "language": "java"
+  }
+]
