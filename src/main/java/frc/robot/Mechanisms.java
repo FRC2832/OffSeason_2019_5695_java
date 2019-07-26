@@ -2,29 +2,29 @@ package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-class Mechanisms {
+public class Mechanisms {
 
     WPI_TalonSRX elev;
-    WPI_TalonSRX endTilt;
-    WPI_TalonSRX arm;
-    WPI_TalonSRX ingestR;
-    WPI_TalonSRX ingestL;
+    public WPI_TalonSRX endTilt;
+    public WPI_TalonSRX arm;
+    public WPI_TalonSRX ingestR;
+    public WPI_TalonSRX ingestL;
 
     public Mechanisms() {
 
-        elev = new WPI_TalonSRX(1);
-        endTilt = new WPI_TalonSRX(3);
+        elev = new WPI_TalonSRX(1);//done
+        endTilt = new WPI_TalonSRX(3);//done
         arm = new WPI_TalonSRX(14);
         ingestL = new WPI_TalonSRX(0);
         ingestR = new WPI_TalonSRX(15);
     }
     public void driveElevator(double speed){
-        elev.set(.5);
+       elev.set(speed);
     }
-    public void driveTilt(double speed){
-        endTilt.set(.5);
+    /*public void driveTilt(double speed){
+        endTilt.set(speed);
     }
-    public void driveArm(Boolean speed){
+    public void driveArm(double speed){
         arm.set(.5);
     }
     public void driveIngestorRUp(double speed){
@@ -38,5 +38,5 @@ class Mechanisms {
     }
     public void driveIngestorLDown(double speed){
         ingestL.set(-.5);
-    }
+    }*/
 }

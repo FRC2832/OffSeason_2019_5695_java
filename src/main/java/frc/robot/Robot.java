@@ -8,6 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.command.*;
 
 
 /**
@@ -22,6 +24,7 @@ public class Robot extends TimedRobot {
   public static Drivetrain drivetrain;
   public static OI oi;
   public static Mechanisms mech;
+  public static Command tiltUp;
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -65,9 +68,18 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-    drivetrain.arcade.arcadeDrive(oi.joystick1.getY(), oi.joystick1.getX());
-    mech.driveElevator(oi.joystick2.getY());
-    mech.driveArm(oi.joystick1.getRawButton(1));
+    drivetrain.arcade.arcadeDrive(oi.gamepad1.getY(), oi.gamepad1.getX());
+    mech.driveElevator(oi.gamepad2.getY());
+    oi.buttonA.whenPressed(new TiltUp());
+    oi.buttonY.whenPressed(new TiltDown());
+    oi.buttonX.whenPressed(new ArmDown());
+    oi.buttonB.whenPressed(new ArmUp());
+    oi.buttonA2.whenPressed(new IngestRDown());
+    oi.buttonY2.whenPressed(new IngestRUp());
+    oi.buttonX2.whenPressed(new IngestLUp());
+    oi.buttonB2.whenPressed(new IngestLDown());
+
+
   }
 
   /**

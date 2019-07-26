@@ -8,9 +8,13 @@
 package frc.robot.command;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Mechanisms;
 
-public class ElevUp extends Command {
-  public ElevUp() {
+public class IngestRUp extends Command {
+
+  public static Mechanisms mech;
+
+  public IngestRUp() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -23,6 +27,7 @@ public class ElevUp extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    mech.ingestR.set(.5);
 
   }
 
@@ -35,6 +40,7 @@ public class ElevUp extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    mech.ingestR.set(0);
   }
 
   // Called when another command which requires one or more of the same
